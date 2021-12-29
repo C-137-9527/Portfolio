@@ -1,0 +1,91 @@
+// IMPORT
+@use "../abstract/abstract" as *;
+
+/* -------------- NAVBAR -------------- */
+/* CONTAINER */
+nav {
+  min-height: 4.5rem;
+  /* SECOND CONTAINER */
+  .navigation {
+    @include flexBox(center, center);
+    background: $color_light;
+    padding: 1.5rem 5vw;
+    transition: width, height, border-radius, 300ms;
+    /* NAV LINKS */
+    ul {
+      @include flexBox(center, center);
+      margin-right: auto;
+      li {
+        position: relative;
+        margin-right: 5vw;
+        /* NAV LINK UNDERLINE */
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -0.4rem;
+          width: 100%;
+          height: 10%;
+          background: $color_dark;
+          transform: scaleX(0);
+          transition: transform 300ms;
+          transform-origin: center;
+        }
+        /* UNDERLINE EFFECT */
+        &:where(:nth-child(1), :nth-child(3)):hover:after {
+          transform: scaleX(1) rotate(3deg);
+        }
+        &:where(:nth-child(2), :nth-child(4)):hover:after {
+          transform: scaleX(1) rotate(-3deg);
+        }
+        // COLOR AND STYLE
+        a {
+          color: $color_dark;
+          font-weight: $fontW_md;
+        }
+        // SOURCE CODE HIGHLIGHT
+        &:nth-child(3) a {
+          color: $color_highlight;
+        }
+      }
+    }
+    /* SHRINK ICON */
+    .fa-bars {
+      color: $color_dark;
+      font-size: calc(max(1.2rem, 1.7vw));
+      transition: transform 500ms;
+      cursor: pointer;
+    }
+  }
+}
+
+// ------------ NAV: JS-TOGGLE CLASSES ------------
+/* ON CLICK HAMBURGER ICON, CHANGE ICON STYLE */
+.barsRotate.barsRotate.barsRotate {
+  /* REPEAT SELECTOR JUST TO INCREASE SPECIFICITY */
+  color: $color_light !important;
+  transform: rotate(90deg);
+}
+
+/* ON CLICK HAMBURGER ICON, SHRINK NAVBAR */
+.shrinkMenu.shrinkMenu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: $color_dark;
+  width: max-content !important;
+  padding: 1rem 1.5rem;
+  border-radius: $borderR_sm;
+}
+
+/* ON CLICK HAMBURGER ICON, HIDE LINKS */
+.hideList.hideList {
+  display: none;
+}
+
+/* ON SCROLL PASS HERO SECTION, FIX NAV POSITION */
+.fixed.fixed {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}

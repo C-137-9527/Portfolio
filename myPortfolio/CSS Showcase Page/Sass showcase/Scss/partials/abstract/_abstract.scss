@@ -1,0 +1,54 @@
+/* -------------- GLOBAL VARIABLES -------------- */
+$color_dark: hsl(0, 0%, 20%);
+$color_light: whitesmoke;
+$color_highlight: orange;
+$fontW_sm: 200;
+$fontW_md: 400;
+$fontW_lg: 800;
+$fontS_sm: calc(max(1.1rem, 1.3vw));
+$fontS_md: calc(max(1.3rem, 1.5vw));
+$fontS_lg: calc(max(1.5rem, 2.3vw));
+$borderR_sm: 5px;
+$borderR_md: 10px;
+$scroll_thumb: hsl(0, 0%, 50%);
+/* "SEE CODE" BUTTON ANIMATION */
+$bgColor: linear-gradient(
+  to right,
+  hsl(199, 98%, 48%),
+  hsl(326, 89%, 61%),
+  hsl(54, 100%, 62%),
+  hsl(199, 98%, 48%)
+);
+$bgSize: 400%;
+$bgAnimation: bgColorLoop 6s linear infinite;
+
+// -------------- @EXTEND --------------
+.fontCombo_sm {
+  font: {
+    family: sora, sans-serif;
+    weight: $fontW_sm;
+    size: $fontS_sm;
+  }
+}
+.fontCombo_md {
+  font: {
+    weight: $fontW_md;
+    size: $fontS_md;
+  }
+}
+
+// -------------- @MIXIN, @FUNCTION, @IF --------------
+@mixin flexBox($align, $justify) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@function scroll-behaviour($value) {
+  @if ($value == 0) {
+    @return smooth;
+  } @else {
+    @return auto;
+  }
+}

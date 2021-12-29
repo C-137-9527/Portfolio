@@ -1,0 +1,75 @@
+// IMPORT
+@use "../abstract/abstract" as *;
+
+/* -------------- MEDIA QUERY -------------- */
+@media (min-width: 768px) {
+  /* SWAP PHOTO POSITION */
+  .photo.photo {
+    display: initial;
+  }
+  .avatar.avatar {
+    display: none;
+  }
+  /* CHANGE CAT POSITION */
+  .cat {
+    z-index: 1 !important;
+  }
+  /* CHANGE INTRO LAYOUT */
+  .intro {
+    width: 90vw;
+    padding: 3rem 4.5rem;
+    border-radius: $borderR_sm;
+    p {
+      margin-top: 0;
+    }
+  }
+  /* ABOUT ME SECTION LAYOUT */
+  #about > div {
+    @include flexBox(auto, auto);
+    .timeline {
+      @include flexBox(auto, space-between);
+      flex-direction: column;
+      width: 40%;
+      margin-bottom: 0;
+    }
+    .aboutMe {
+      width: 60%;
+      padding: 0 3rem;
+      @include flexBox(space-between, center);
+    }
+    button {
+      margin-top: auto;
+    }
+  }
+  /* FOOTER */
+  footer div {
+    flex-direction: row;
+    justify-content: space-around;
+    /* FOOTER COPY SUCCESS MESSAGE POSITION */
+    span::after {
+      left: 0;
+      top: -2rem;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  /* PROJECT LAYOUT */
+  .project {
+    @include flexBox(center, space-around);
+    .showcaseWrapper {
+      width: 70%;
+    }
+    .descriptions {
+      width: 25%;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  /* MORE PADDING IN PROJECT SECTION */
+  .project {
+    padding: 3rem 4vw !important;
+  }
+}

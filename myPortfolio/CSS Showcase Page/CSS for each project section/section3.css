@@ -1,0 +1,290 @@
+/* CSS FOR CSS SHOWCASE PAGE SECTION 3 ONLY */
+
+/* ------------- LIST AND BTNS WRAPPER ------------- */
+.showcaseWrapper {
+  display: grid;
+  place-items: center;
+}
+
+/* ------------- LIST ------------- */
+/* CONTAINER */
+.list {
+  --themeColor: hsl(197, 100%, 59%);
+  width: 18rem;
+  background: hsl(0, 1%, 72%);
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px var(--darkModeShadow);
+}
+/* LIST ITEMS */
+.list li {
+  height: 3.2rem;
+  background: var(--color_light);
+  margin-bottom: 0.2rem;
+  color: var(--color_dark);
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 3.5rem;
+  transition-property: opacity, transform, background, color, font-weight;
+  transition-duration: 300ms;
+}
+/* REMOVE MARGIN OF LAST LI */
+.list li:last-of-type {
+  margin-bottom: 0;
+}
+/* HEADER STYLE */
+.list li:first-child {
+  margin-bottom: 0;
+  background: var(--themeColor);
+  color: var(--color_light);
+  font-weight: var(--fontW_lg);
+  border-radius: 15px 15px 0 0;
+}
+/* FOOTER STYLE */
+.list div {
+  height: 1.5rem;
+  background: var(--themeColor);
+  border-radius: 0 0 15px 15px;
+}
+/* ON HOVER FOCUS ON ITEM */
+.list:hover li {
+  opacity: 0.6;
+}
+.list li ~ li:hover {
+  background: var(--themeColor);
+  color: var(--color_light);
+  font-weight: var(--fontW_lg);
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* ----------- EXPANDING SEARCH BAR ----------- */
+/* CONTAINER */
+.searchBar {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 2rem auto;
+  padding: 5px;
+  border: 3px solid pink;
+  border-radius: 50%;
+  transition: width 300ms cubic-bezier(0.18, 0.89, 0.32, 1.15),
+    border-radius 300ms;
+  overflow: hidden;
+  box-sizing: content-box;
+  box-shadow: 5px 5px 10px var(--darkModeShadow);
+}
+/* SEARCH BAR */
+.searchBar input {
+  width: 100%;
+  height: 100%;
+  padding: 0 70px 0 20px;
+  border: none;
+  outline: none;
+  background: var(--darkMode_light);
+  color: teal;
+  font-size: 2rem;
+  transition: background 300ms;
+  cursor: pointer;
+}
+/* SEARCH BAR PLACEHOLDER */
+.searchBar input::placeholder {
+  color: teal;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+/* ON FOCUS-WTHIN, EXPAND SEARCH BAR */
+.searchBar:focus-within {
+  width: 15rem;
+  border-radius: var(--borderR_lg);
+}
+.searchBar:focus-within input {
+  cursor: text;
+}
+/* SEARCH BUTTON */
+.searchBar button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: none;
+  border-radius: 50%;
+  background: lightgreen;
+  transition: transform 0.5s, background 0.5s;
+  pointer-events: none;
+}
+.searchBar:focus-within button {
+  pointer-events: initial;
+}
+/* SEARCH ICON */
+.fa-search {
+  margin: auto;
+  font-size: 2rem;
+}
+/* ON FOCUS-WTHIN, CHANGE ICON STYLE */
+.searchBar:focus-within button {
+  background: yellow;
+  transform: scale(0.7);
+}
+.searchBar:focus-within .fa-search {
+  color: tomato;
+}
+/* SEARCH ICON CLICK ANIMATION */
+.searchBar:focus-within button:active {
+  background: lightgreen;
+  transform: scale(0.45);
+  transition: none;
+}
+
+/* ------------- CHECK BUTTON ------------- */
+/* LOCAL VARIABLES */
+.checkButton {
+  --lightGray: hsl(0, 1%, 50%);
+  --darkGray: var(--color_dark);
+  --blue: rgb(0, 255, 255);
+}
+/* CONTAINER */
+.checkButton {
+  position: relative;
+  width: 12rem;
+  height: 4.5rem;
+  margin: auto;
+  border-radius: 30px;
+  border: 6px solid var(--lightGray);
+  box-sizing: content-box;
+  box-shadow: 5px 5px 10px var(--darkModeShadow);
+}
+/* BUTTON BODY */
+.checkButton input {
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  background: linear-gradient(
+    var(--darkGray),
+    var(--lightGray),
+    var(--darkGray)
+  );
+  box-shadow: 0 0 10px 2px inset var(--darkModeShadow);
+  cursor: pointer;
+  appearance: none;
+}
+/* SLIDER */
+.checkButton input::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  height: 100%;
+  border: 1px solid var(--darkGray);
+  border-radius: 25px;
+  background: linear-gradient(var(--lightGray), var(--darkGray));
+  box-sizing: border-box;
+  transition: transform 0.5s;
+}
+/* ON CHECKED, SLIDE */
+.checkButton input:checked::after {
+  transform: translateX(43%);
+}
+/* ON CHECKED, BACKGROUND LIGHT ON */
+.checkButton input:checked {
+  background: var(--blue);
+  box-shadow: 0 0 10px 2px inset var(--darkModeShadow),
+    0 0 50px 10px rgba(0, 255, 255, 0.3);
+}
+/* BUTTON SMALL LIGHT */
+.checkButton input::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  right: 35%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--darkGray),
+    var(--lightGray),
+    var(--darkGray)
+  );
+  transition: transform 0.5s;
+  box-shadow: 0 0 5px 0.1px inset var(--darkModeShadow);
+}
+/* ON CHECKED, BUTTON SMALL LIGHT ON */
+.checkButton input:checked::before {
+  background: var(--blue);
+  transform: translateX(57px);
+  box-shadow: 0 0 30px 3px var(--blue);
+}
+
+/* ------------- CUSTOM SELECT BTN ------------- */
+/* CONTAINER */
+.selectButton {
+  position: relative;
+  width: 12rem;
+  height: 4rem;
+  margin: 3rem auto;
+  border-radius: var(--borderR_md);
+  overflow: hidden;
+  box-shadow: 5px 5px 10px var(--darkModeShadow);
+}
+/* BTN BODY */
+select {
+  width: 100%;
+  height: 100%;
+  padding-right: 5rem;
+  border: none;
+  outline: none;
+  background: hsl(0, 1%, 30%);
+  color: var(--color_light);
+  font-size: 1.3rem;
+  text-align: center;
+  cursor: pointer;
+}
+/* ARROWS BUTTON */
+.selectButton span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 100%;
+  background: var(--color_dark);
+  pointer-events: none;
+}
+/* UP AND DOWN ARROWS */
+.selectButton span::before,
+.selectButton span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border: 0.5rem solid transparent;
+  transform: translate(-50%, -50%);
+}
+.selectButton span::before {
+  top: 30%;
+  border-bottom: 0.6rem solid var(--color_light);
+}
+.selectButton span::after {
+  top: 70%;
+  border-top: 0.6rem solid var(--color_light);
+}
+
+/*  ------------- MEDIA QUERY ------------- */
+@media (min-width: 1000px) {
+  .showcaseWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1200px) {
+  .showcaseWrapper {
+    justify-content: center;
+  }
+  .list {
+    margin-right: 8rem;
+  }
+  .searchBar,
+  .checkButton,
+  .selectButton {
+    margin: 3rem auto;
+  }
+}

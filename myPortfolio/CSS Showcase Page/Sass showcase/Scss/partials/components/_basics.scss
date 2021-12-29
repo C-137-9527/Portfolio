@@ -1,0 +1,54 @@
+// IMPORT
+@use "../abstract/abstract" as *;
+
+/* -------------- BASIC SETUP -------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll: {
+    behavior: scroll-behaviour(0);
+    padding-top: 6rem;
+  }
+  &::before,
+  &::after {
+    @extend *;
+  }
+}
+body {
+  @extend .fontCombo_sm;
+  background: $color_light;
+  color: $color_dark;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  color: $color_dark;
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  @extend .fontCombo_sm;
+  cursor: pointer;
+}
+/* SECTION CONTAINER */
+section {
+  width: 90vw;
+  margin: 6rem auto;
+  /* SECTION TITLE */
+  h2 {
+    margin-bottom: 1rem;
+    font: {
+      size: $fontS_lg;
+      weight: $fontW_lg;
+    }
+    text-align: center;
+  }
+  p {
+    line-height: 1.5;
+  }
+}
