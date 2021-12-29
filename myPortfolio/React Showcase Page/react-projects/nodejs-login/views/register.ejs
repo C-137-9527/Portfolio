@@ -1,0 +1,88 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: linear-gradient(lightgreen, lightseagreen);
+  }
+  h1 {
+    color: white;
+  }
+  form {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 3rem 4rem;
+    width: max-content;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  .nameContainer,
+  .emailContainer,
+  .passwordContainer {
+    margin: 0.2rem 0;
+    padding: 1rem 0;
+    width: 20rem;
+    border-radius: 10px;
+    background: rgba(46, 139, 87, 0.3);
+    text-align: center;
+  }
+  label {
+    display: inline-block;
+    min-width: 3.5rem;
+  }
+  .nameContainer input,
+  .emailContainer input,
+  .passwordContainer input {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    outline: none;
+  }
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: blue;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    transition: transform 300ms;
+  }
+  button:hover {
+    transform: scale(1.2);
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+  }
+</style>
+
+<h1>Register</h1>
+<form action="/register" method="POST">
+  <div class="nameContainer">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required />
+  </div>
+  <div class="emailContainer">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+  <div class="passwordContainer">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+  </div>
+  <button type="submit">register</button>
+</form>
+
+<a href="/login">already has an account?</a>
