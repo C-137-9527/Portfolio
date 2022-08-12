@@ -1,0 +1,112 @@
+/* CSS FOR CSS SHOWCASE PAGE SECTION 5 ONLY */
+
+/* CONTIANER */
+.gridContainer {
+  --transitionOpacity: opacity 300ms;
+  --transitionImage: background-image 300ms ease-in-out;
+  display: grid;
+  grid-template-areas:
+    "a b c c"
+    "d d e f"
+    "g h i j"
+    "g k l l";
+  grid-gap: 3px;
+  min-height: 30rem;
+  width: 100%;
+  background: var(--color_dark);
+}
+
+/* CHILDREN DIV */
+.gridContainer > div {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+}
+.gridContainer:hover div::after,
+.gridContainer:hover h1 {
+  opacity: 0;
+}
+
+/* NUMBERS */
+.gridContainer h1 {
+  z-index: 10;
+  transition: var(--transitionOpacity);
+}
+
+/* WINTER */
+.bg1 {
+  background-image: url("https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  color: var(--color_dark);
+  transition: var(--transitionImage);
+}
+.bg1:hover {
+  background-image: url("https://images.pexels.com/photos/210205/pexels-photo-210205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+/* MASK */
+.bg1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: var(--transitionOpacity);
+}
+
+/* SUMMER */
+.bg2 {
+  background-image: url("https://images.pexels.com/photos/210205/pexels-photo-210205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  color: var(--color_light);
+  transition: var(--transitionImage);
+}
+.bg2:hover {
+  background-image: url("https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+}
+/* MASK */
+.bg2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: var(--transitionOpacity);
+}
+
+/* GRID AREA ASSIGNMENT */
+.gridContainer div:first-child {
+  grid-area: a;
+}
+.gridContainer div:nth-child(2) {
+  grid-area: b;
+}
+.gridContainer div:nth-child(3) {
+  grid-area: c;
+}
+.gridContainer div:nth-child(4) {
+  grid-area: d;
+}
+.gridContainer div:nth-child(5) {
+  grid-area: e;
+}
+.gridContainer div:nth-child(6) {
+  grid-area: f;
+}
+.gridContainer div:nth-child(7) {
+  grid-area: g;
+}
+.gridContainer div:nth-child(8) {
+  grid-area: h;
+}
+.gridContainer div:nth-child(9) {
+  grid-area: i;
+}
+.gridContainer div:nth-child(10) {
+  grid-area: j;
+}
+.gridContainer div:nth-child(11) {
+  grid-area: k;
+}
+.gridContainer div:nth-child(12) {
+  grid-area: l;
+}

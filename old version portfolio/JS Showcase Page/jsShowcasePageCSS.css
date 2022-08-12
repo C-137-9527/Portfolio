@@ -1,0 +1,536 @@
+/* CSS FOR ALL JAVASCRIPT PROJECTS */
+
+/* NAVBAR STYLES OVERWRITE */
+nav {
+  background: var(--darkMode_dark);
+  margin-bottom: 8rem;
+}
+nav a,
+.fa-bars {
+  color: var(--darkMode_light);
+}
+.fa-moon,
+.fa-sun {
+  color: var(--color_highlight_onLightBG);
+}
+nav li::after {
+  background: var(--darkMode_light);
+}
+
+/* HERO SECTION */
+.hero {
+  width: 80vw;
+  margin: 0 auto 8rem;
+}
+.hero p {
+  text-align: center;
+  line-height: 1.75;
+  text-shadow: 1px 1px 3px var(--darkMode_light),
+    2px 2px 3px var(--darkMode_dark);
+}
+.hero span {
+  font-weight: var(--fontW_lg);
+  color: var(--color_highlight);
+  transition: color 300ms;
+}
+
+/* JS TOGGLE CLASS - ADD MARGIN TOP WHEN NAV SHRINKS */
+.marginTop {
+  margin-top: 12rem !important;
+}
+
+/* ---------- SECTION 1 LOGIN ---------- */
+/* CONTAINER */
+.formContainer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 5rem 0;
+  min-height: 30rem;
+  background: linear-gradient(lightgreen, lightseagreen);
+}
+/* LOGIN METHODS */
+.emailContainer,
+.passwordContainer {
+  margin: 0.2rem 0;
+  padding: 1.5rem 2rem;
+  width: max-content;
+  border-radius: var(--borderR_sm);
+  background: rgba(46, 139, 87, 0.3);
+  color: var(--color_dark);
+  text-align: center;
+}
+.emailContainer input,
+.passwordContainer input {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: var(--borderR_sm);
+  height: 2.5rem;
+  outline: none;
+}
+.formBTN {
+  text-align: center;
+}
+.registerBTN,
+.loginBTN,
+.loginSuccess button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borderR_sm);
+  border: none;
+  color: white;
+  font-weight: 800;
+  transition: transform 300ms;
+}
+.registerBTN:hover,
+.loginBTN:hover {
+  transform: scale(1.2);
+}
+.registerBTN {
+  background: darkorange;
+}
+.loginBTN {
+  background: hsl(211, 100%, 50%);
+}
+.loginSuccess {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: lightgreen;
+  color: var(--color_dark);
+  font-size: 2.5rem;
+  text-align: center;
+  transform: translateX(-110%);
+  transition: transform 500ms;
+}
+.loginSuccess button {
+  width: max-content;
+  margin: 2rem auto;
+  background: lightseagreen;
+  border: 3px solid seagreen;
+  transform: translateY(2rem);
+}
+.loginSuccess button:hover {
+  transform: translateY(2rem) scale(1.2);
+}
+.showLoginSuccess {
+  transform: translateX(0);
+}
+
+/* ---------- SECTION 2 WEATHER API ---------- */
+/* CONTAINER */
+.weather {
+  display: grid;
+  place-items: center;
+  min-height: 30rem;
+  background: radial-gradient(rgba(56, 136, 146, 0.8), rgba(31, 41, 101, 0.9)),
+    url("https://media.istockphoto.com/photos/weather-forecast-picture-id477110708?k=20&m=477110708&s=612x612&w=0&h=siFKvKxvZuoxGLRyhyk467lUidPehYoMM_Cd9Jpbj3c=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color_light);
+}
+/* POSITION */
+.temperature {
+  display: flex;
+  justify-content: space-around;
+  margin: 8rem 0 -1rem;
+  width: 100%;
+  font-size: var(--fontS_lg);
+}
+.weather h5 {
+  text-align: center;
+}
+
+/* ---------- SECTION 3 LOCAL STORAGE ---------- */
+/* CONTAINER */
+.taskContainer {
+  min-height: 30rem;
+  padding: 5rem 2rem 2rem;
+  background: linear-gradient(
+    hsl(39, 100%, 40%),
+    hsl(39, 100%, 60%),
+    hsl(39, 100%, 90%)
+  );
+  text-align: center;
+}
+/* INPUT AND ADD BTN */
+.addItemContainer {
+  margin: auto;
+}
+.addItemContainer input,
+.addItemContainer button {
+  margin-bottom: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--borderR_lg);
+  outline: none;
+}
+.addItemContainer button:hover {
+  background: gray;
+  color: whitesmoke;
+  font-weight: 500;
+}
+/* ITEMS LIST */
+.taskOutput {
+  display: grid;
+  place-items: center;
+}
+.taskOutput > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--borderR_md);
+  background: var(--color_light);
+  color: var(--color_dark);
+}
+/* TASK CONTENT */
+.taskOutput p {
+  margin-right: 2rem;
+  font-weight: var(--fontW_md);
+}
+/* FINISH AND REMOVE BTN */
+.taskOutput div div {
+  width: max-content;
+}
+.taskOutput button {
+  padding: 0.5rem;
+  border-radius: var(--borderR_md);
+  border: none;
+  transition: transform 300ms;
+}
+.taskOutput button:hover {
+  transform: scale(1.2);
+}
+.taskOutput button:first-of-type {
+  background: lightgreen;
+  margin-left: auto;
+}
+.taskOutput button:last-of-type {
+  background: lightcoral;
+  margin-left: 0.5rem;
+}
+/* JS TOGGLE CLASS, FINISH TASK */
+.crossOut {
+  color: darkgray;
+  text-decoration: line-through;
+}
+
+/* ---------- SECTION 4 CLOUD STORAGE ---------- */
+/* CONTAINER */
+.cloudStorage {
+  position: relative;
+  min-height: 30rem;
+  padding: 5rem 2rem 2rem;
+  background: linear-gradient(
+    hsl(197, 71%, 33%),
+    hsl(197, 71%, 53%),
+    lightblue
+  );
+  text-align: center;
+}
+/* INPUT AND ADD BTN */
+.addMemo input,
+.addMemo button {
+  margin-bottom: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--borderR_lg);
+  outline: none;
+}
+.addMemo button:hover {
+  background: gray;
+  color: whitesmoke;
+  font-weight: 500;
+}
+/* EACH MEMO */
+.memo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: var(--borderR_md);
+  background: var(--color_light);
+  color: var(--color_dark);
+}
+/* MEMO CONTENT */
+.memo span {
+  padding: 0.5rem;
+  margin-right: 2rem;
+  font-weight: var(--fontW_md);
+  cursor: pointer;
+}
+.memo span:hover {
+  background: orange;
+}
+/* UPDATE AND DELETE BTN */
+.memo button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--borderR_md);
+  transition: transform 300ms;
+}
+.memo button:hover {
+  transform: scale(1.2);
+}
+.memo button:first-of-type {
+  background: lightgreen;
+}
+.memo button:last-of-type {
+  background: lightcoral;
+  margin-left: 0.5rem;
+}
+.displayMemo {
+  margin-bottom: 3rem;
+}
+.memoMessage {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+}
+.memoMessage span {
+  font-weight: 900;
+  color: darkorange;
+}
+
+/* ---------- SECTION 5 COUNTDOWN TIMER ---------- */
+/* CONTAINER */
+.countdown {
+  min-height: 30rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://wilstar.com/wp-content/uploads/2020/12/new-years-day-1-e1607420497339.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+.countdown h1 {
+  font-family: cursive;
+  font-size: max(2.5rem, 4vw);
+}
+/* TIME COUNTER */
+.timeLeft {
+  text-align: center;
+}
+.timeLeft h3 {
+  display: inline-block;
+  margin: 2rem 0.5rem;
+}
+.timeLeft span {
+  color: var(--color_highlight);
+  font-size: max(3rem, 3.5vw);
+}
+
+/* ---------- SECTION 6 INTERSECTION OBSERVER API ---------- */
+/* CONTAINER */
+.observer {
+  height: 30rem;
+  color: var(--color_light);
+  overflow: scroll;
+}
+.observer h1 {
+  height: 30rem;
+  background: orange;
+  font-size: 3rem;
+}
+.observer h1:nth-child(2) {
+  background: skyblue;
+}
+.observer h1:last-child {
+  position: relative;
+  background: blueviolet;
+}
+.observer h1 span {
+  position: absolute;
+  bottom: 0;
+}
+.filter {
+  filter: brightness(0.5);
+}
+
+/* ---------- SECTION 7 JS ANIMATION ---------- */
+/* CONTAINER */
+.jsAnimation {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 30rem;
+  background: var(--darkMode_dark);
+}
+/* HEADING */
+.jsAnimation h1 {
+  font-size: max(2rem, 4vw);
+  color: var(--darkMode_light);
+  text-align: center;
+  transition: text-shadow 300ms, opacity 300ms;
+  cursor: pointer;
+}
+.jsAnimation h1:hover {
+  text-shadow: 0 0 2px var(--color_highlight), 0 0 4px var(--color_highlight),
+    0 0 6px var(--color_highlight), 0 0 8px var(--color_highlight),
+    0 0 10px var(--color_highlight), 0 0 12px var(--color_highlight);
+}
+/* JS TOGGLE CLASS, FADE AWAY H1 */
+.fadeAway {
+  pointer-events: none;
+  text-shadow: -8px 8px 5px black;
+  opacity: 0.5;
+}
+/* BLOCKS */
+.blocksContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* JS CREATE BLOCK */
+.block {
+  height: 10%;
+  background-image: url("https://wallpaperaccess.com/full/197542.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  animation: reveal 0.3s ease-in-out forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+  opacity: 0;
+}
+.block:nth-child(2n) {
+  animation: reveal 1.3s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+}
+.block:nth-child(7n) {
+  animation: reveal 0.8s ease-in forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale(0) translateX(35rem);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ---------- SECTION 8 SHOPPING CART ---------- */
+.shoppingCartBG {
+  background: url("https://t4.ftcdn.net/jpg/02/26/68/49/360_F_226684997_B70B2bB21Wk2ch12kAV0cqjNlTpX9fdB.jpg")
+    center fixed;
+  background-size: cover;
+}
+.shoppingCart {
+  padding: 2rem;
+  min-height: 30rem;
+}
+/* SHAPES */
+.triangle,
+.square,
+.circle {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+}
+.triangle {
+  background: violet;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.square {
+  background: tomato;
+}
+.circle {
+  background: lightgreen;
+  border-radius: 50%;
+}
+/* LAYOUT */
+.products {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  background: var(--color_dark);
+  outline: 2px solid gold;
+  outline-offset: -10px;
+  color: white;
+  text-align: center;
+}
+.product p {
+  margin: 1rem auto;
+}
+.product .price {
+  color: gold;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.product button {
+  width: 3rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+  border: none;
+  background: lightgray;
+  font-weight: 500;
+}
+.product button:hover {
+  background: gray;
+}
+
+/* JS TOGGLED DISABLED STYLE */
+.disabled {
+  cursor: not-allowed;
+}
+
+/* CART */
+.cartContainer {
+  width: max-content;
+  margin: 2.5rem auto 0 auto;
+  min-height: 5rem;
+  color: var(--color_dark);
+  text-align: center;
+}
+.cartContainer h4 {
+  color: whitesmoke;
+}
+.cartContainer h4 span {
+  color: gold;
+  font-size: 2rem;
+}
+.boughtItem {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  font-weight: var(--fontW_md);
+  color: whitesmoke;
+}
+.boughtItem span {
+  color: gold;
+  font-size: 2rem;
+}
