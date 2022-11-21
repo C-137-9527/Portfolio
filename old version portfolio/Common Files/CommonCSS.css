@@ -1,0 +1,477 @@
+/* SHARED CSS: NAVBAR, SECTION LAYOUT, AND FOOTER */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* -------------- CUSTOM PROPERTIES -------------- */
+:root {
+  --color_dark: hsl(0, 0%, 20%);
+  --color_light: white;
+  --color_highlight: orange;
+  --color_highlight_onLightBG: orange;
+  --fontW_sm: 200;
+  --fontW_md: 400;
+  --fontW_lg: 800;
+  --fontS_sm: max(1.1rem, 1.3vw);
+  --fontS_md: max(1.3rem, 1.5vw);
+  --fontS_lg: max(1.3rem, 1.8vw);
+  --borderR_sm: 5px;
+  --borderR_md: 10px;
+  --borderR_lg: 20px;
+  /* DARK MODE */
+  --darkMode_dark: hsl(0, 0%, 20%);
+  --darkMode_light: white;
+  --darkModeShadow: hsl(0, 0%, 20%);
+  --darkModeLightShadow: darkgray;
+  --darkMode_btnLight: none;
+  --darkMode_green: lightgreen;
+}
+
+/* DARK MODE TOGGLE CLASS */
+.darkMode {
+  --darkMode_dark: white;
+  --darkMode_light: hsl(0, 0%, 20%);
+  --darkModeShadow: black;
+  --darkModeLightShadow: black;
+  --color_highlight: hsl(60, 100%, 45%);
+  --color_highlight_onLightBG: hsl(60, 100%, 30%);
+  --darkMode_btnLight: white;
+  --darkMode_green: seagreen;
+}
+
+/* -------------- BASIC SETUP -------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sora, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+  background: var(--darkMode_light);
+  color: var(--darkMode_dark);
+  font-weight: var(--fontW_sm);
+  font-size: var(--fontS_sm);
+  transition: color 300ms, background 300ms;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  color: var(--darkMode_dark);
+  text-decoration: none;
+  transition: color 300ms;
+  cursor: pointer;
+}
+input,
+button {
+  font-weight: var(--fontW_sm);
+  font-size: var(--fontS_sm);
+}
+button {
+  cursor: pointer;
+}
+
+/* -------------- SCROLLBAR -------------- */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color_dark);
+  margin: 0.5rem;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 70%);
+  border: 0.2rem solid var(--color_dark);
+  border-radius: 20px;
+}
+
+/* -------------- NAVBAR -------------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-bottom: 4rem;
+  padding: 1.3rem 5vw;
+  width: 100%;
+  background: var(--darkMode_light);
+  transition: background 300ms, padding 300ms;
+}
+nav ul {
+  display: flex;
+  margin-right: auto;
+}
+nav li {
+  position: relative;
+  margin-right: 5vw;
+  font-size: max(0.9rem, 1.1vw);
+  font-weight: var(--fontW_md);
+  cursor: pointer;
+}
+
+/* UNDERLINE ANIMATION */
+nav li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 10%;
+  background: var(--darkMode_dark);
+  transform: scaleX(0);
+  transition: transform 300ms;
+}
+nav li:where(:nth-child(1), :nth-child(3)):hover:after {
+  transform: scaleX(1) rotate(2deg);
+}
+nav li:where(:nth-child(2), :nth-child(4)):hover:after {
+  transform: scaleX(1) rotate(-2deg);
+}
+
+/* DARK MODE ICON */
+.fa-moon,
+.fa-sun {
+  color: var(--color_highlight);
+  font-size: max(1.2rem, 1.5vw);
+  transition: color 300ms;
+  cursor: pointer;
+}
+
+/* HAMBURGER ICON */
+.fa-bars {
+  margin-left: max(1rem, 1.5vw);
+  font-size: max(1.1rem, 1.2vw);
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+/* JS TOGGLE CLASS - SHRINK NAVBAR */
+.shrinkMenu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: max-content;
+  padding: 1rem 1.2rem;
+  background: var(--darkMode_dark);
+  border-radius: var(--borderR_sm);
+}
+/* JS TOGGLE CLASS - HIDE LINKS */
+.hideList {
+  display: none;
+}
+/* JS TOGGLE CLASS - FIX NAVBAR */
+.fixed {
+  position: fixed;
+  z-index: 999;
+}
+/* JS TOGGLE CLASS - HAMBURGER ICON */
+.barsRotate {
+  margin-left: 0.5rem;
+  color: var(--darkMode_light);
+  transform: rotate(90deg);
+}
+
+/* -------------- HERO SECTION -------------- */
+/* GLITCH EFFECT */
+.glitchMain {
+  position: relative;
+}
+.glitch2,
+.glitch3 {
+  position: absolute;
+  left: 0;
+}
+.hero:hover :where(.glitchMain, .glitch2, .glitch3) {
+  color: var(--darkMode_dark);
+}
+.hero:hover .glitchMain {
+  animation: glitch 700ms infinite;
+}
+.hero:hover .glitch2 {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.1rem, -0.1rem);
+  opacity: 0.8;
+  animation: glitch 850ms infinite;
+}
+.hero:hover .glitch3 {
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.1rem, 0.1rem);
+  opacity: 0.8;
+  animation: glitch 575ms infinite;
+}
+@keyframes glitch {
+  0% {
+    text-shadow: 0.2rem 0 0 #d9138a, -0.2rem -0.1rem 0 #e8d21d,
+      -0.1rem 0.2rem 0 #12a4d9;
+  }
+  14% {
+    text-shadow: 0.2rem 0 0 red, -0.2rem -0.1rem 0 #e8d21d,
+      -0.1rem 0.2rem #12a4d9;
+  }
+  15% {
+    text-shadow: -0.2rem -0.1rem 0 #d9138a, 0.1rem 0.1rem 0 #e8d21d,
+      -0.2rem -0.2rem #12a4d9;
+  }
+  49% {
+    text-shadow: -0.2rem -0.1rem 0 #d9138a, 0.1rem 0.1rem 0 #e8d21d,
+      -0.2rem -0.2rem #12a4d9;
+  }
+  50% {
+    text-shadow: 0.1rem 0.2rem 0 #d9138a, 0.2rem 0 0 #e8d21d, 0 -0.2rem #12a4d9;
+  }
+  99% {
+    text-shadow: 0.1rem 0.2rem 0 #d9138a, 0.2rem 0 0 #e8d21d, 0 -0.2rem #12a4d9;
+  }
+  100% {
+    text-shadow: -0.1rem 0 0 #d9138a, -0.1rem -0.1rem 0 #e8d21d,
+      -0.1rem -0.2rem #12a4d9;
+  }
+}
+
+/* STYLES FOR SHOWCASE PAGES ONLY */
+.heroGreeting.heroGreeting {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--darkMode_dark);
+  font-size: max(3rem, 3.5vw);
+  line-height: 1;
+}
+.hero summary {
+  text-align: center;
+  margin: 1rem;
+}
+.hero details {
+  word-spacing: 0.3ch;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* -------------- SECTION COUNTERS (STYLES FOR SHOWCASE PAGES ONLY) -------------- */
+main {
+  counter-reset: sectionCounter;
+}
+section > h1 {
+  counter-increment: sectionCounter;
+}
+section > h1::before {
+  content: 'Section ' counter(sectionCounter) ': ';
+  margin-right: 0.5rem;
+}
+
+/* -------------- PROJECT SECTIONS -------------- */
+section {
+  width: 90vw;
+  margin: 0 auto 6rem;
+}
+/* SECTION TITLE */
+section > h1 {
+  margin-bottom: 0.5rem;
+  font-size: var(--fontS_lg);
+  font-weight: var(--fontW_lg);
+  text-align: center;
+}
+
+/* SHOWCASE PROJECT + KEY CODES */
+.project {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: var(--borderR_md);
+  box-shadow: 3px 3px 5px var(--darkModeLightShadow),
+    6px 6px 10px var(--darkModeLightShadow);
+}
+
+/* SHOWCASE */
+.showcaseWrapper {
+  border-radius: var(--borderR_md);
+  overflow: hidden;
+}
+
+/* PROJECT DESCRIPTION: IDEA + KEY CODE + BTN */
+.descriptions {
+  margin: 2rem auto 0;
+  font-weight: var(--fontW_md);
+  word-spacing: 0.3ch;
+  line-height: 1.5;
+  text-align: center;
+}
+.descriptions p {
+  text-align: start;
+}
+.descriptions p:nth-child(-1) {
+  margin-bottom: 0;
+}
+/* TEXT HIGHLIGHT */
+.descriptions span {
+  color: var(--color_highlight);
+  font-weight: var(--fontW_lg);
+  transition: color 300ms;
+}
+/* PROJECT IDEA LINK */
+.descriptions p a {
+  text-decoration: underline;
+}
+/* BUTTON */
+.descriptions button {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.3rem 2rem;
+  width: max-content;
+  background: var(--darkMode_light);
+  border-radius: 30px;
+  border: 1px solid var(--darkMode_dark);
+  color: var(--darkMode_dark);
+  font-weight: var(--fontW_md);
+  font-size: 1.1rem;
+}
+.descriptions button:hover {
+  border: 1px solid transparent;
+  background: linear-gradient(
+    to right,
+    hsl(199, 98%, 48%),
+    hsl(326, 89%, 61%),
+    hsl(54, 100%, 62%),
+    hsl(199, 98%, 48%)
+  );
+  background-size: 400%;
+  color: var(--color_light);
+  font-weight: 900;
+  animation: bgColorLoop 6s linear infinite;
+  box-shadow: 0 0 30px inset var(--darkMode_btnLight);
+}
+/* BTN SHADOW EFFECT */
+.descriptions button:hover::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 10px;
+  border-radius: 30px;
+  background: linear-gradient(
+    to right,
+    hsl(199, 98%, 48%),
+    hsl(326, 89%, 61%),
+    hsl(54, 100%, 62%),
+    hsl(199, 98%, 48%)
+  );
+  background-size: 400%;
+  animation: bgColorLoop 6s linear infinite;
+  filter: blur(30px);
+}
+@keyframes bgColorLoop {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+/* -------------- FOOTER -------------- */
+footer {
+  padding: 2rem 5rem;
+  background: var(--darkMode_dark);
+  color: var(--color_highlight_onLightBG);
+  font-weight: var(--fontW_md);
+  transition: background 300ms;
+}
+/* INDIVIDUAL CONTACT */
+footer div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+/* ICON */
+footer i {
+  margin-right: 0.5rem;
+}
+/* TEXT */
+footer span {
+  position: relative;
+  cursor: pointer;
+}
+/* COPY SUCCESS MESSAGE */
+footer span::after {
+  content: 'copied!';
+  position: absolute;
+  left: -5rem;
+  top: 0;
+  color: var(--darkMode_green);
+  transform: translateY(-0.5rem);
+  transition: opacity 1s, transform 300ms;
+  opacity: 0;
+}
+/* CLICK EFFECT */
+footer span:active::after {
+  transition: none;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* -------------- MEDIA QUERY -------------- */
+@media (max-width: 425px) {
+  nav {
+    padding: 1.3rem 1rem;
+  }
+  nav li {
+    margin-right: 0.6rem;
+    font-size: 0.8rem;
+  }
+  .fa-moon,
+  .fa-sun {
+    font-size: 1rem;
+  }
+  .fa-bars {
+    font-size: 0.9rem;
+  }
+  footer {
+    padding: 2rem 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  section h1 {
+    text-align: left;
+  }
+  footer div {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer span::after {
+    left: 0;
+    top: -2rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-right: 5px solid var(--color_highlight);
+  }
+  .showcaseWrapper {
+    width: 70%;
+    margin-right: auto;
+  }
+  .descriptions {
+    position: relative;
+    min-height: 30rem;
+    width: 25%;
+    margin-top: 0;
+    padding: 2rem 0;
+  }
+  .descriptions button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
