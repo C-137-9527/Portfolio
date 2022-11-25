@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- seo -->
+    <meta name="description" content="Portfolio of Alvin Zhang" />
+    <meta
+      name="keywords"
+      content="portfolio, front-end developer, web development, react developer"
+    />
+
+    <!-- fav icon -->
+    <link rel="icon" href="./assets/favicon.ico" />
+
+    <!-- font awsome icons -->
+    <script
+      src="https://kit.fontawesome.com/793522ef06.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./index.css" />
+
+    <!-- javascript -->
+    <script src="./index.js" defer></script>
+
+    <!-- mouse trailing effect: third party library -->
+    <script src="./canvas.js" defer></script>
+
+    <!-- tagCloud: used for text sphere -->
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+
+    <!-- email library: smptJS -->
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+
+    <!-- title -->
+    <title>AZ || Front-end Developer</title>
+  </head>
+
+  <body>
+    <nav>
+      <!-- --- music btn --- -->
+      <div class="musicBtn">
+        <i class="fas fa-headphones"> </i>
+        <audio src="./assets/sound.mp3" loop></audio>
+      </div>
+
+      <!-- --- hamburger btn --- -->
+      <div class="hamburgerBtn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- --- navigation --- -->
+      <div class="navigation hide">
+        <!-- header -->
+        <div class="navigation__header">
+          <h3>A</h3>
+          <h4>Alvin</h4>
+          <p>Web Developer</p>
+        </div>
+
+        <!-- list -->
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              download="AlvinZhang_resume_PDF"
+              href="./assets/resumePDF.pdf"
+              class="downloadResumeBtn"
+              >Resume</a
+            >
+          </li>
+        </ul>
+
+        <!-- icons -->
+        <div class="navigation__icons">
+          <a
+            href="https://www.linkedin.com/in/peng-fei-zhang-a351b9b2/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://github.com/C-137-9527/Portfolio" target="_blank">
+            <i class="fab fa-github"></i
+          ></a>
+          <i class="fas fa-info-circle"></i>
+        </div>
+      </div>
+    </nav>
+
+    <aside>
+      <i class="fas fa-times closeAside"></i>
+      <h2>
+        The design of this app is inspired by
+        <a href="https://jacekjeznach.com/" target="_blank">Jacek Jeznach</a>.
+        <br />
+        All codes are written by myself and can be found on my Github
+        repository.
+      </h2>
+    </aside>
+
+    <main class="tag">
+      <!-- --- hero section --- -->
+      <section id="hero" class="hero section">
+        <!-- mouse trailing effect -->
+        <canvas></canvas>
+
+        <!-- title -->
+        <h1 class="tag">
+          <span style="--i: 1">H</span>
+          <span style="--i: 2">i</span>
+          <span style="--i: 3">,</span>
+          <br />
+          <span style="--i: 4">I</span>
+          <span style="--i: 5">’</span>
+          <span style="--i: 6">m</span>
+          <span>&nbsp</span>
+          <span class="capitalA" style="--i: 7">A</span>
+          <span style="--i: 8">l</span>
+          <span style="--i: 9">v</span>
+          <span style="--i: 10">i</span>
+          <span style="--i: 11">n</span>
+          <span style="--i: 12">,</span>
+          <br />
+          <span style="--i: 13">w</span>
+          <span style="--i: 13">e</span>
+          <span style="--i: 13">b</span>
+          <span>&nbsp</span>
+          <span style="--i: 13">d</span>
+          <span style="--i: 13">e</span>
+          <span style="--i: 13">v</span>
+          <span style="--i: 13">e</span>
+          <span style="--i: 13">l</span>
+          <span style="--i: 13">o</span>
+          <span style="--i: 13">p</span>
+          <span style="--i: 13">e</span>
+          <span style="--i: 13">r</span>
+        </h1>
+
+        <!-- job title -->
+        <p class="tag">Front-end / React Developer</p>
+
+        <!-- contact btn -->
+        <a href="#contact" class="contactBtn">Contact me!</a>
+
+        <!-- down arrow -->
+        <i class="fas fa-angle-down"></i>
+      </section>
+
+      <!-- --- about section --- -->
+      <section id="about" class="about section">
+        <!-- title -->
+        <h1 class="tag">
+          <span>A</span>
+          <span>b</span>
+          <span>o</span>
+          <span>u</span>
+          <span>t</span>
+          <span>&nbsp</span>
+          <span>M</span>
+          <span>e</span>
+        </h1>
+
+        <div class="about__content">
+          <!-- description -->
+          <div class="sectionDescription tag">
+            <p>Hi there! My name is Alvin Zhang, a front-end developer!</p>
+            <p>
+              I’ve been teaching myself to code in the past year, with main
+              focus on the front-end. My core strengths include:
+              <span>HTML</span>, <span>CSS</span>, <span>Javascript</span>, and
+              <span>React</span>. I feel fully confident to build modern web
+              apps that are user friendly and mobile responsive .
+            </p>
+            <p>
+              I am currently open to front-end job opportunities, full-time or
+              freelance. If you'd like to know more about me, please check out
+              my
+              <span
+                ><a
+                  download="AlvinZhang_resume_PDF"
+                  href="./assets/resumePDF.pdf"
+                  class="downloadResumeBtn"
+                  >RESUME</a
+                ></span
+              >.
+            </p>
+          </div>
+
+          <!-- text sphere -->
+          <span class="cloudTag"></span>
+        </div>
+      </section>
+
+      <!-- --- work section --- -->
+      <section id="work" class="work section">
+        <!-- title -->
+        <h1 class="tag">
+          <span>M</span>
+          <span>y</span>
+          <span>&nbsp</span>
+          <span>W</span>
+          <span>o</span>
+          <span>r</span>
+          <span>k</span>
+          <span>s</span>
+        </h1>
+
+        <!-- description -->
+        <div class="sectionDescription tag">
+          <p>
+            Since I have no prior work experience in web development, here are a
+            few handpicked projects to demostrate my skills. Most project ideas
+            are found on the internet, but tweaked and coded by myself.
+          </p>
+          <p>
+            To see the source code or check out my other projects, please vist
+            my
+            <span
+              ><a href="https://github.com/C-137-9527/Portfolio" target="_blank"
+                >Github</a
+              ></span
+            >.
+          </p>
+        </div>
+
+        <!-- projects showcase -->
+        <div class="work__showcaseContainer">
+          <!-- project 1: react-2d-pixels -->
+          <article>
+            <div>
+              <p>
+                REACT PROJECT: a game-like app, move around the character and
+                explore the map with arrow keys.
+              </p>
+              <a
+                href="https://alvinzhang-react-2d-pixels.netlify.app/"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+
+          <!-- project 2: react-inventory-management -->
+          <article>
+            <div>
+              <p>
+                REACT PROJECT: an inventory management system with firebase
+                authentication.
+              </p>
+              <a
+                href="https://alvinzhang-react-inventory-management.netlify.app/"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+
+          <!-- project 3: react-filter -->
+          <article>
+            <div>
+              <p>
+                REACT PROJECT: a list of profiles that you can add tags onto and
+                search with a filter
+              </p>
+              <a
+                href="https://alvinzhang-react-filter.netlify.app/"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+
+          <!-- project 4: react-typeScript -->
+          <article>
+            <div>
+              <p>
+                REACT + TYPESCRIPT: a simple shopping cart build with Vite
+                instead of create-react-app
+              </p>
+              <a
+                href="https://alvinzhang-react-ts-shopping-cart.netlify.app"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+
+          <!-- project 5: react-admin-dashboard -->
+          <article>
+            <div>
+              <p>
+                REACT PROJECT: an admin dashboard app built with material UI and
+                nivo charts
+              </p>
+              <a
+                href="https://alvinzhang-react-admin-dashboard.netlify.app/"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+
+          <!-- project 6: old portfolio -->
+          <article>
+            <div>
+              <p>Vanilla HTML/CSS/JS: an older version of my portfolio</p>
+              <a
+                href="https://alvinzhang-old-portfolio.netlify.app"
+                target="_blank"
+                >view</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- --- contact section --- -->
+      <section id="contact" class="contact section">
+        <!-- title -->
+        <h1 class="tag">
+          <span>C</span>
+          <span>o</span>
+          <span>n</span>
+          <span>t</span>
+          <span>a</span>
+          <span>c</span>
+          <span>t</span>
+          <span>&nbsp</span>
+          <span>M</span>
+          <span>e</span>
+        </h1>
+
+        <div class="contact__content">
+          <div>
+            <!-- description -->
+            <div class="sectionDescription">
+              <p class="tag">
+                Feel free to reach me out! All emails will be replied ASAP.
+              </p>
+            </div>
+
+            <!-- my info  -->
+            <div class="contact__info">
+              <!-- email -->
+              <p>
+                <i class="fas fa-envelope-open"></i>
+                <a data-contactInfo>zpf9193@gmail.com</a>
+              </p>
+
+              <!-- cellphone -->
+              <p>
+                <i class="fas fa-phone"></i>
+                <a data-contactInfo>236 988 1101</a>
+              </p>
+
+              <!-- location -->
+              <p>
+                <i class="fas fa-globe"></i>
+                <a data-contactInfo>Richmond, British Columnbia, Canada</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- contact form -->
+          <form class="tag" method="POST" action="">
+            <!-- user inputs -->
+            <input required type="text" name="name" placeholder="Name" />
+            <input required type="email" name="email" placeholder="Email" />
+            <input required type="text" name="subject" placeholder="Subject" />
+            <textarea
+              required
+              name="message"
+              placeholder="Message"
+              cols="30"
+              rows="5"
+            ></textarea>
+            <a><button type="submit">Submit</button></a>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
